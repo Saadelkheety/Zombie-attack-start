@@ -33,6 +33,11 @@ function setup() {
 
 function draw() {
 	background(77, 112, 107);
+	if (horde.gameOver) {
+		textSize(32);
+		text("Game Over", width/2, height/2);
+		return;
+	}
 	this.horde.drawZombies();
 	shovel.draw();
 

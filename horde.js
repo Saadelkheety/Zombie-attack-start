@@ -2,13 +2,18 @@
 function Horde() {
 	//an array of zombies
 	this.zombies = [];
+    this.gameOver = false;
 
 	//call each zombies drawing code and update it's location ready to be drawn again
 	this.drawZombies = function() {
 		for (var i = 0; i < this.zombies.length; i++) {
 			this.zombies[i].draw();
 			this.zombies[i].updateLocation();
-		}
+            //check if the game is over
+            if (!this.gameOver, this.zombies[i].gameOver()) {
+                this.gameOver = true;
+            }
+    }
 	}
 
 	//add n zombies to the horde
@@ -30,4 +35,5 @@ function Horde() {
             }
         }
     }
+
 }
