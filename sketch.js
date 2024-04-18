@@ -37,3 +37,8 @@ function draw() {
 	shovel.draw();
 
 }
+
+
+function mousePressed() {
+	horde.checkZombieClicked(mouseX, mouseY);
+}

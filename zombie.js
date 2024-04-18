@@ -4,7 +4,7 @@ function zombie(y) {
 	this.x = -10;
 	this.y = y;
 	//set a random speed
-	this.speed = random(0.2, 0.5);
+	this.speed = random(0.1, 0.5);
 
     //health property
     this.health = 100;
@@ -34,4 +34,14 @@ function zombie(y) {
 	this.updateLocation = function() {
 		this.x += this.speed;
 	}
+
+    //check if the zombie has been clicked
+    this.clicked = function(x, y) {
+        var d = dist(x, y, this.x, this.y);
+        if (d < 50) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -17,4 +17,17 @@ function Horde() {
 			this.zombies.push(new zombie(random(20, height - 50)))
 		}
 	}
+
+    //check if a zombie has been clicked
+    this.checkZombieClicked = function(x, y) {
+        for (var i = this.zombies.length - 1; i >= 0; i--) {
+            if (this.zombies[i].clicked(x, y)) {
+                this.zombies[i].health -= 10;
+            }
+            if (this.zombies[i].health <= 0) {
+                this.zombies.splice(i, 1);
+                this.addZombies(1);
+            }
+        }
+    }
 }
